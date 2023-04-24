@@ -28,10 +28,13 @@ void selection_sort(int *array, size_t size)
 				smallestIndex = j;
 			}
 		}
-		tmp = array[i];
-		array[i] = array[smallestIndex];
-		array[smallestIndex] = tmp;
-		print_array(array, size);
+		if (smallestIndex != i)
+		{
+			tmp = array[i];
+			array[i] = array[smallestIndex];
+			array[smallestIndex] = tmp;
+			print_array(array, size);
+		}
 	}
 }
 
