@@ -51,11 +51,11 @@ void sift_down(int *array, size_t start, size_t end, size_t size)
  */
 void heap_sort(int *array, size_t size)
 {
-	if (!array || size < 2)
-		return;
-
 	size_t end = size - 1;
 	size_t start;
+
+	if (!array || size < 2)
+		return;
 
 	for (start = (size - 2) / 2; (int)start >= 0; start--)
 		sift_down(array, start, end, size);
