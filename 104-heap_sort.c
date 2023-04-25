@@ -18,6 +18,7 @@ void sift_down(int *array, size_t start, size_t end, size_t size)
 
 	while (2 * root + 1 <= end)
 	{
+		int temp = array[root];
 		child = 2 * root + 1;
 		swap = root;
 
@@ -30,7 +31,6 @@ void sift_down(int *array, size_t start, size_t end, size_t size)
 		if (swap == root)
 			return;
 
-		int temp = array[root];
 		array[root] = array[swap];
 		array[swap] = temp;
 		root = swap;
@@ -51,8 +51,9 @@ void sift_down(int *array, size_t start, size_t end, size_t size)
 void heap_sort(int *array, size_t size)
 {
 	size_t end = size - 1;
+	size_t start;
 
-	for (size_t start = (size - 2) / 2; (int)start >= 0; start--)
+	for (start = (size - 2) / 2; (int)start >= 0; start--)
 		sift_down(array, start, end, size);
 
 	while (end > 0)
