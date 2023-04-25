@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdlib.h>
 
 /**
  * merg - Merge two sorted sub-arrays into a sorted array
