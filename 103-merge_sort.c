@@ -55,6 +55,8 @@ void merge_sort(int *array, size_t size)
 		int *right;
 		size_t left_siz;
 		size_t right_siz;
+		int *temp;
+		size_t i;
 
 		mid = size / 2;
 		left = array;
@@ -70,15 +72,11 @@ void merge_sort(int *array, size_t size)
 		printf("[right]: ");
 		print_array(right, right_siz);
 
-		int *temp;
-
 		temp = malloc(sizeof(int) * size);
 
 		if (!temp)
 			return;
 		merg(left, left_siz, right, right_siz, temp);
-
-		size_t i;
 
 		for (i = 0; i < size; i++)
 			array[i] = temp[i];
